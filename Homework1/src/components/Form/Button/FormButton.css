@@ -1,0 +1,13 @@
+.form-btn {
+	border-radius: 10px;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	transition:  0.5s;
+}
+
+.form-btn:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

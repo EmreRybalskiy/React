@@ -1,0 +1,7 @@
+.circle-block {
+	width: 450px;
+	height: 450px;
+	background-color: lightblue;
+	position: relative;
+	margin: 0 auto;
+}
