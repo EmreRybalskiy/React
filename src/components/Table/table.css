@@ -1,0 +1,15 @@
+.holderTable {
+	margin: 0 auto;
+	border: 1px solid lightgray;
+	padding: 20px;
+}
+
+table {
+	margin: 0 auto;
+	width: 200px;
+}
+
+td {
+	padding: 20px 10px;
+	border: 1px solid lightgrey
+}

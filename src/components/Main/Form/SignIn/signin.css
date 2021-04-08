@@ -1,0 +1,49 @@
+.signin {
+	height: 80%;
+	width: 80%;
+	transform: translate(10%,10%);
+	border-radius: 10px;
+	border: 1px solid lightgray;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.fields {
+	border-radius: 5px;
+	padding: 20px 0;
+	width: 90%;
+	background-color:#F6F8FA;
+	height: 50%;
+	display: flex;
+	align-content: center;
+	align-self: center;
+	justify-content: space-between;
+	flex-direction: column;
+	border: 1px solid lightgray
+}
+
+.name-field {
+	text-align: left;
+	margin-left: 40px;
+}
+
+.forgot-pass {
+	margin-left: 50px;
+	color: #0b88db;
+	cursor: pointer;
+}
+
+.link-create {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 20px 0;
+	width: 90%;
+	margin: 10px auto;
+}
+
+.link-to {
+	color: #0b88db;
+	text-decoration: none;
+}
