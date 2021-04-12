@@ -24,8 +24,10 @@ export function SignIn(props) {
             if (user.userName === name && user.password === password) {
                 user.isAuthenticated = 'true';
                 localStorage.setItem("user", JSON.stringify(user));
+                props.setisAuthenticated(true)
                 alert('Теперь вы можете перейти в свой профиль')
             } else {
+                props.setisAuthenticated(false)
                 redirect();
             }
         }
