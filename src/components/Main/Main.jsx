@@ -17,11 +17,6 @@ export function Main() {
         <Link to="/form/signin">Авторизоваться</Link>
       )}
 
-      {/* {isAuthenticated && location.pathname === "/" && (
-        <Link to="/films" className="link-to films">
-          Go to Films
-        </Link>
-      )} */}
       <Switch>
         <Route path="/form">
           <Form setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated}/>
