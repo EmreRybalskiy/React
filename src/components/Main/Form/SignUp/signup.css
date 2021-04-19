@@ -1,16 +1,12 @@
 .signup {
-  text-align: center;
-  height: 80%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: #fff;
-  border-radius: 10px;
-  transform: translate(10%, 10%);
-  border: 1px solid lightgray;
-}
-
-.repeat-pass {
-  color: red;
+	text-align: center;
+	height: 80%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: #fff;
+	border-radius: 10px;
+	transform: translate(10%,10%);
+	border: 1px solid lightgray;
 }

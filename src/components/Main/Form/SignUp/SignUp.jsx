@@ -6,83 +6,67 @@ import { Button } from "../../../Button/Button.jsx";
 
 import "./signup.css";
 
-export function SignUp(props) {
-  const [secondPassword, setSecondPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState(true);
-  const [signUpData, setSignUpData] = useState({
-    userName: "",
-    email: "",
-    password: "",
-  });
+export function SignUp() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [secondPassword, setSecondPassword] = useState("");
 
-  const addUserToLocalStorage = () => {
-    localStorage.setItem("user", JSON.stringify(signUpData));
-  };
+    const addUserToLocalStorage = () => {
+        localStorage.setItem("user", JSON.stringify(obj));
+    };
 
-  const checkPassword = () => {
-    if (signUpData.password === secondPassword) {
-      alert("Succeful");
-      setRepeatPassword(true);
-      addUserToLocalStorage();
-    } else if (signUpData.password !== secondPassword) {
-      setRepeatPassword(false);
-    }
-  };
+    const checkPassword = () => {
+        if (password === secondPassword) {
+            addUserToLocalStorage();
+        }
+        return false;
+    };
 
-  const checkValidFields = () => {
-    if (signUpData !== "") {
-      checkPassword();
-    }
-  };
+    const obj = {
+        userName: name,
+        email: email,
+        password: password,
+        isAuthenticated : false
+    };
 
-  return (
-    <div className="signup">
-      <h2>Create your account</h2>
-      <div className="fields">
-        <span className="name-field">Username</span>
-        <Input
-          type="text"
-          value={signUpData.userName}
-          setValue={(e) => {
-            setSignUpData((data) => ({ ...data, userName: e.target.value }));
-          }}
-        />
-        <span className="name-field">Email adress</span>
-        <Input
-          type="email"
-          value={signUpData.email}
-          setValue={(e) => {
-            setSignUpData((data) => ({ ...data, email: e.target.value }));
-          }}
-        />
-        <span className="name-field">
-          Password{" "}
-          {!repeatPassword && (
-            <span className="repeat-pass"> Password mismatch</span>
-          )}
-        </span>
-        <Input
-          type="password"
-          value={signUpData.password}
-          setValue={(e) => {
-            setSignUpData((data) => ({ ...data, password: e.target.value }));
-          }}
-        />
-        <Input
-          type="password"
-          place="Повторите пароль"
-          value={secondPassword}
-          setValue={(e) => setSecondPassword(e.target.value)}
-        />
+    return (
+        <div className="signup">
+            <h2>Create your account</h2>
+            <div className="fields">
+                <span className="name-field">Username</span>
+                <Input
+                    type="text"
+                    value={name}
+                    setValue={(e) => setName(e.target.value)}
+                />
+                <span className="name-field">Email adress</span>
+                <Input
+                    type="email"
+                    value={email}
+                    setValue={(e) => setEmail(e.target.value)}
+                />
+                <span className="name-field">Password</span>
 
-        <Button btnText="Create Account" localStorage={checkValidFields} />
-      </div>
-      <div className="link-create">
-        <span>Have account? </span>
-        <Link to="/form/signin" className="link-to">
-          Go to Sign In
-        </Link>
-      </div>
-    </div>
-  );
+                <Input
+                    type="password"
+                    value={password}
+                    setValue={(e) => setPassword(e.target.value)}
+                />
+                <Input
+                    type="password"
+                    place="Повторите пароль"
+                    value={secondPassword}
+                    setValue={(e) => setSecondPassword(e.target.value)}
+                />
+                <Button btnText="Create Account" localStorage={checkPassword} />
+            </div>
+            <div className="link-create">
+                <span>Have account? </span>
+                <Link to="/" className="link-to">
+                    Go to Sign In
+                </Link>
+            </div>
+        </div>
+    );
 }

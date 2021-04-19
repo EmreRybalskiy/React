@@ -1,15 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+
 import { Main } from "../Main/Main.jsx";
+import { Header } from "../Header/Header.jsx";
+import { Footer } from "../Footer/Footer.jsx";
 
 import "./App.css";
 
 export function App() {
-  return (
-    <div className="app">
-      <BrowserRouter>
-        <Route path="/" component={Main} />
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="app">
+            <Header />
+            <Main />
+            <Footer />
+        </div>
+    );
 }
