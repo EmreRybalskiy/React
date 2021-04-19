@@ -1,24 +1,15 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addCounter, dicreaseCounter } from "../store/actions/actions.js";
+import { BrowserRouter, Route } from "react-router-dom";
+import { Main } from "../Main/Main.jsx";
 
-export const Test = () => {
-  const dispatcher = useDispatch();
-  const data = useSelector(({ films2: { data } }) => data);
+import "./App.css";
 
-  const test = () => {
-    dispatcher(addCounter(5));
-  };
-
-  const decreaseConter = () => {
-    dispatcher(1);
-  };
-
+export function App() {
   return (
-    <div>
-      <button onClick={test}>Hello</button>
-      <button onClick={decreaseConter}>Decrease</button>
-      <div>{data}</div>
+    <div className="app">
+      <BrowserRouter>
+        <Route path="/" component={Main} />
+      </BrowserRouter>
     </div>
   );
-};
+}
