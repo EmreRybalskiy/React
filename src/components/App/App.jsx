@@ -1,17 +1,24 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addCounter, dicreaseCounter } from "../store/actions/actions.js";
 
-import { Main } from "../Main/Main.jsx";
-import { Header } from "../Header/Header.jsx";
-import { Footer } from "../Footer/Footer.jsx";
+export const Test = () => {
+  const dispatcher = useDispatch();
+  const data = useSelector(({ films2: { data } }) => data);
 
-import "./App.css";
+  const test = () => {
+    dispatcher(addCounter(5));
+  };
 
-export function App() {
-    return (
-        <div className="app">
-            <Header />
-            <Main />
-            <Footer />
-        </div>
-    );
-}
+  const decreaseConter = () => {
+    dispatcher(1);
+  };
+
+  return (
+    <div>
+      <button onClick={test}>Hello</button>
+      <button onClick={decreaseConter}>Decrease</button>
+      <div>{data}</div>
+    </div>
+  );
+};
