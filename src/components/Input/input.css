@@ -1,12 +1,16 @@
 .form-input {
-	border: 1px solid lightgray;
-	border-radius: 5px;
-	outline: none;
-	height: 20px;
-	margin: 5px 0;
-	width: 80%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  outline: none;
+  height: 20px;
+  margin: 5px 0;
+  width: 80%;
 }
 
 .form-input:focus {
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.error {
+  border: 1px solid red;
 }

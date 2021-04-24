@@ -16,10 +16,12 @@ export function Main() {
       {location.pathname === "/" && (
         <Link to="/form/signin">Авторизоваться</Link>
       )}
-
       <Switch>
         <Route path="/form">
-          <Form setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated}/>
+          <Form
+            setIsAuthenticated={setIsAuthenticated}
+            isAuthenticated={isAuthenticated}
+          />
         </Route>
         <PrivateRoute
           exact

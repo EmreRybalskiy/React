@@ -10,25 +10,6 @@ export function SignIn(props) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const redirect = () => {
-    const { history } = props;
-    history.push("/form/signup");
-  };
-
-  const getFromLocalStorage = () => {
-    if (localStorage.getItem("user") !== null) {
-      const user = JSON.parse(localStorage.getItem(localStorage.key("user")));
-      if (user.userName === name && user.password === password) {
-        alert("You can check your films");
-        // localStorage.setItem("user", JSON.stringify(user));
-        props.setIsAuthenticated(true);
-      } else {
-        props.setIsAuthenticated(false);
-        redirect();
-      }
-    }
-  };
-
   return (
     <div className="signin">
       {props.isAuthenticated && (
@@ -52,7 +33,7 @@ export function SignIn(props) {
           value={password}
           setValue={(e) => setPassword(e.target.value)}
         />
-        <Button btnText="Sign In" localStorage={getFromLocalStorage} />
+        <Button btnText="Sign In" />
       </div>
       <div className="link-create">
         <span>New with us? </span>
