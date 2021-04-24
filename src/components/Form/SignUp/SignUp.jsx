@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { Input } from "../../../Input/Input.jsx";
-import { Button } from "../../../Button/Button.jsx";
-import { createSetSignUpDataAction } from "../../../../store/actions/signUpActions.js";
+import { Input } from "../../Input/Input.jsx";
+import { Button } from "../../Button/Button.jsx";
+import { createSetSignUpDataAction } from "../../../store/actions/signUpActions.js";
 
 import "./signup.css";
 
@@ -42,16 +42,19 @@ export function SignUp(props) {
 
   return (
     <div className="signup">
-      {showResultSignUp && (
-        <div>
-          {resultSignUp.map(([key, value]) => (
-            <div key={key}>
-              <span> {key + ":"}</span>
-              <span> {value}</span>
-            </div>
-          ))}
-        </div>
-      )}
+      {showResultSignUp &&
+        signUpData.userName &&
+        signUpData.email &&
+        signUpData.password && (
+          <div>
+            {resultSignUp.map(([key, value]) => (
+              <div key={key}>
+                <span> {key + ":"}</span>
+                <span> {value}</span>
+              </div>
+            ))}
+          </div>
+        )}
       <h2>Create your account</h2>
       <div className="fields">
         <span className="name-field">Username</span>
@@ -70,6 +73,7 @@ export function SignUp(props) {
           setValue={(e) => {
             setSignUpData((data) => ({ ...data, email: e.target.value }));
           }}
+          className={showResultSignUp && !signUpData.email ? "error" : ""}
         />
         <span className="name-field">
           Password{" "}
@@ -83,12 +87,14 @@ export function SignUp(props) {
           setValue={(e) => {
             setSignUpData((data) => ({ ...data, password: e.target.value }));
           }}
+          className={showResultSignUp && !signUpData.password ? "error" : ""}
         />
         <Input
           type="password"
           place="Повторите пароль"
           value={secondPassword}
           setValue={(e) => setSecondPassword(e.target.value)}
+          className={showResultSignUp && !signUpData.password ? "error" : ""}
         />
 
         <Button
@@ -102,7 +108,7 @@ export function SignUp(props) {
       </div>
       <div className="link-create">
         <span>Have account? </span>
-        <Link to="/form/signin" className="link-to">
+        <Link to="/signin" className="link-to">
           Go to Sign In
         </Link>
       </div>

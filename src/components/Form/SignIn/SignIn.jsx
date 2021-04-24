@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Input } from "../../../Input/Input.jsx";
-import { Button } from "../../../Button/Button.jsx";
+import { Input } from "../../Input/Input.jsx";
+import { Button } from "../../Button/Button.jsx";
 
 import "./signin.css";
 
@@ -37,7 +37,7 @@ export function SignIn(props) {
       </div>
       <div className="link-create">
         <span>New with us? </span>
-        <Link to="/form/signup" className="link-to">
+        <Link to="/signup" className="link-to">
           Go to Sign Up
         </Link>
       </div>
